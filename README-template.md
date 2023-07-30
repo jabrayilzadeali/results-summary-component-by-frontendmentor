@@ -4,19 +4,22 @@ This is a solution to the [Results summary component challenge on Frontend Mento
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Frontend Mentor - Results summary component solution](#frontend-mentor---results-summary-component-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My thought process](#my-thought-process)
+        - [html](#html)
+        - [css](#css)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -45,7 +48,44 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-## My process
+## My thought process
+
+This time I wanted to experiment with atomic css. If you don't know atomic css is it is the approach to CSS architecture that favors small, single-purpose classes with names based on visual function. For Example:
+
+##### html
+```html
+<div class="flex flex-col align-center">
+  <h1 class="text-lg clr-white">Heading</h1>
+  <p class="clr-grey">Sub Text</p>
+</div>
+```
+
+##### css
+```css
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-lg {
+  font-size: 1.5rem;
+}
+
+.clr-white {
+  color: white;
+}
+
+.clr-grey {
+  color: grey;
+}
+```
 
 ### Built with
 
@@ -54,11 +94,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Atomic Css
 
 ### What I learned
 

@@ -5,20 +5,27 @@
     --green-teal: hsl(166, 100%, 37%);
     --cobalt-blue: hsl(234, 85%, 45%);
 
-    /* Gradients */
-    --Light-slate-blue-bg: hsl(252, 100%, 67%);
-    --Light-royal-blue-bg: hsl(241, 81%, 54%);
+    --light-red-transparent: hsla(0, 100%, 67%, 0.1);
+    --orangey-yellow-transparent: hsla(39, 100%, 56%, 0.1);
+    --green-teal-transparent: hsla(166, 100%, 37%, 0.1);
+    --cobalt-blue-transparent: hsla(234, 85%, 45%, 0.1);
 
-    --Violet-blue-circle: hsla(256, 72%, 46%, 1);
-    --Persian-blue-circle: hsla(241, 72%, 46%, 0);
+    /* Gradients */
+    --light-slate-blue-bg: hsl(252, 100%, 67%);
+    --light-royal-blue-bg: hsl(241, 81%, 54%);
+
+    --violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --persian-blue-circle: hsla(241, 72%, 46%, 0);
 
 
 
     /* Neutral */
-    --White: hsl(0, 0%, 100%);
-    --Pale-blue: hsl(221, 100%, 96%);
-    --Light-lavender: hsl(241, 100%, 89%);
-    --Dark-gray-blue: hsl(223, 30%, 27%);
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-gray-blue: hsl(223, 30%, 27%);
+    
+    --md-width: 770px;
 }
 
 /* Josh Comeau Css Reset start */
@@ -54,6 +61,11 @@ body {
     min-height: 100vh;
     display: grid;
     place-content: center;
+    background-color: var(--pale-blue);
+
+    /* font famly */
+    font-family: 'Hanken Grotesk', sans-serif;
+
 }
 
 /*
@@ -100,6 +112,294 @@ h6 {
 }
 /* Josh Comeau Css Reset end */
 
+/* Fonts */
+.font-medium {
+    font-weight: 500;
+}
+.font-bold {
+    font-weight: 700;
+}
+.font-extrabold {
+    font-weight: 800;
+}
+/* Colors */
+/* Primary */
+.clr-light-red {
+    color: var(--light-red);
+}
+
+.clr-orangey-yellow {
+    color: var(--orangey-yellow);
+}
+
+.clr-green-teal {
+    color: var(--green-teal);
+}
+
+.clr-cobalt-blue {
+    color: var(--cobalt-blue);
+}
+
+/* Neutral */
+.clr-white {
+    color: var(--white);
+}
+
+.clr-pale-blue {
+    color: var(--pale-blue)
+}
+
+.clr-light-lavender {
+    color: var(--light-lavender);
+}
+
+.clr-dark-gray-blue-bg {
+    background-color: var(--dark-gray-blue);
+}
+
+/* Gradients */
+/* Gradient 1 */
+/* backgrounds */
+.clr-white-bg {
+    background-color: var(--white);    
+}
+
+.clr-light-slate-blue-bg {
+    background-color: var(--light-slate-blue-bg);
+}
+
+.clr-light-royal-blue-bg {
+    background-color: var(--light-royal-blue-bg);
+}
+
+/* transparent-bg */
+.clr-light-red-transparent-bg {
+    background-color: var(--light-red-transparent);
+}
+
+.clr-orangey-yellow-transparent-bg {
+    background-color: var(--orangey-yellow-transparent);
+}
+
+.clr-green-teal-transparent-bg {
+    background-color: var(--green-teal-transparent);
+}
+
+.clr-cobalt-blue-transparent-bg {
+    background-color: var(--cobalt-blue-transparent);
+}
+
+/* Gradient 2 */
+.clr-violet-blue-circle {
+    background-color: var(--violet-blue-circle);
+}
+    
+.clr-persian-blue-circle {
+    background-color: var(--persian-blue-circle);
+}
+
+.gradient-1 {
+    background: linear-gradient(to bottom, var(--light-slate-blue-bg), var(--light-royal-blue-bg));
+}
+
+.gradient-circle {
+    background: linear-gradient(to bottom, var(--violet-blue-circle), var(--persian-blue-circle));
+}
+
+/* margins */
+.m-1 {
+    margin: 1rem;
+}
+
+.my-1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+/* paddings */
+.p-1 {
+    padding: 1rem;
+}
+.px-3 {
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.px-1\.5 {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.py-\.8 {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+}
+
+.py-2 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+
+/* width */
+.w-100 {
+    width: 100%;
+}
+.w-375px {
+    width: 375px;
+}
+
+.w-13rem  {
+    width: 13rem;
+}
+
+/* height */
+.h-13rem {
+    height: 13rem;
+}
+
+/* opacity */
+
+.opacity-70 {
+    opacity: .7;
+}
+
+.opacity-50 {
+    opacity: .5;
+}
+
+/* texts */
+.text-center {
+    text-align: center;
+}
+/* font-size */
+.text-lg {
+    font-size: 1.3rem;
+}
+
+.text-xl {
+    font-size: 1.8rem;
+}
+
+.text-3xl {
+    font-size: 3rem;
+}
+
+.text-5xl {
+    font-size: 5rem;
+}
+
+/* borders */
+.border-none {
+    border: none;
+}
+
+/* border radius */
+.rounded-\.5 {
+    border-radius: .5rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.rounded-b-lg {
+    border-bottom-left-radius: 2.5rem;
+    border-bottom-right-radius: 2.5rem;
+}
+
+.justify-center {
+    justify-content: center;
+}
+ 
+.justify-between {
+    justify-content: space-between;
+}
+.justify-around {
+    justify-content: space-around;
+}
+
+.align-center {
+    align-items: center;
+}
+.gap-\.5 {
+    gap: .5rem
+}
+
+.gap-1 {
+    gap: 1rem
+}
+
+/* flexbox */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+/* grid */
 .grid {
     display: grid;
+}
+
+
+/* hover */
+.btn-hover:hover {
+    background: linear-gradient(to bottom, var(--light-slate-blue-bg), var(--light-royal-blue-bg));
+}
+
+.transition-all {
+    transition: all .5s;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .px-md-2 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .grid-cols-md-2 {
+        grid-template-columns: repeat(2, minmax(375px, 1fr));
+    }
+    
+    .z-index-1 {
+        z-index: 1;
+    }
+    .z-index-2 {
+        z-index: 2;
+    }
+
+    .rounded-md-r-lg {
+        border-top-right-radius: 2.5rem;
+        border-bottom-right-radius: 2.5rem;
+    }
+
+    .rounded-md-lg {
+        border-radius: 2.5rem;
+    }
+
+    .transform-left-2 {
+        transform: translateX(-2rem);
+    }
 }

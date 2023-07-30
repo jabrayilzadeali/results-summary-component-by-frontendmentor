@@ -14,27 +14,30 @@
     <!-- Google Font: Hanken Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
-        <div class="grid">
-            <div class="col">
-                <h1 class="text-lg">Your Result</h1>
-                <div class="rounded-full rounded-b-lg">
-                    <div class="text-3xl">76</div>
-                    <span class="text-sm">of 100<span>
+    <main class="">
+        <div class="grid grid-cols-md-2 clr-white-bg rounded-md-lg">
+            
+            <div class="col z-index-2 w-375px px-3 py-2 rounded-b-lg rounded-md-lg gradient-1 flex gap-2 flex-col align-center justify-between">
+                <h1 class="text-lg clr-light-lavender">Your Result</h1>
+                <div class="rounded-full gradient-circle text-center w-13rem h-13rem flex flex-col justify-center align-center">
+                    <div class="text-5xl clr-white font-extrabold">76</div>
+                    <span class="text-sm clr-light-lavender opacity-50">of 100<span>
                 </div>
 
-                <h2 class="text-xl">Great</h2>
-                <div class="text-base">
-                    You scored higher than 65% of the people who have taken these tests.
+                <div>
+                    <h2 class="mb-1 text-xl text-center clr-white">Great</h2>
+                    <div class="px-md-2 text-base text-center clr-light-lavender">
+                        You scored higher than 65% of the people who have taken these tests.
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <h1 class="text-lg">Summary</h1>
-                <div data-stats class="flex flex-col gap-2"></div>
-                <button class="rounded-full">Continue</button>
+            <div class="col flex flex-col justify-between clr-white-bg px-3 py-2 rounded-md-r-lg">
+                <h1 class="mb-2 text-lg">Summary</h1>
+                <div data-stats class="flex flex-col gap-1"></div>
+                <button class="transition-all cursor-pointer btn-hover mt-2 rounded-full w-100 py-.8 border-none clr-dark-gray-blue-bg clr-white text-lg ">Continue</button>
             </div>
         </div>
     </main>
