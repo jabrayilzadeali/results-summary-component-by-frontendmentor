@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Live Site: [here](https://jabrayilzadeali.github.io/results-summary-component-by-frontendmentor/)
-- Frontendmentor Profile: [here]()
+- Frontendmentor Profile: [here](https://www.frontendmentor.io/solutions/resultssummarycomponentusingatomiccss-FAiDHhAQEj)
 
 ## My thought process
 
