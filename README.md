@@ -1,97 +1,258 @@
-# Frontend Mentor - Results summary component
+# Frontend Mentor - Results summary component solution
 
-![Design preview for the Results summary component coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Results summary component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Frontend Mentor - Results summary component solution](#frontend-mentor---results-summary-component-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My thought process](#my-thought-process)
+      - [Atomic ccs](#atomic-ccs)
+      - [Javascript](#javascript)
+    - [Built with](#built-with)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+## Overview
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this results summary component and get it looking as close to the design as possible.
+Users should be able to:
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+- [x] View the optimal layout for the interface depending on their device's screen size
+- [x] See hover and focus states for all interactive elements on the page
+- [x] **Bonus**: Use the local JSON data to dynamically populate the content
 
-We provide the data for the results in a local `data.json` file. So you can use that to add the results and total score dynamically if you choose.
+### Screenshot
 
-Your users should be able to:
+![desktop screenshot](screenshots/desktop.png)
+![mobile screenshot](screenshots/mobile.png)
 
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
-- **Bonus**: Use the local JSON data to dynamically populate the content
+### Links
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+- Live Site: [here](https://jabrayilzadeali.github.io/results-summary-component-by-frontendmentor/)
+- Frontendmentor Profile: [here]()
 
-## Where to find everything
+## My thought process
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+#### Atomic ccs
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+This time I wanted to experiment with atomic css. If you don't know atomic css is it is the approach to CSS architecture that favors small, single-purpose classes with names based on visual function. For Example:
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+`html`
+```html
+<div class="flex flex-col align-center">
+  <h1 class="text-lg clr-white">Heading</h1>
+  <p class="clr-grey">Sub Text</p>
+</div>
+```
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+`css`
+```css
+.flex {
+  display: flex;
+}
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+.flex-col {
+  flex-direction: column;
+}
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+.align-center {
+  align-items: center;
+}
 
-## Building your project
+.text-lg {
+  font-size: 1.5rem;
+}
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+.clr-white {
+  color: white;
+}
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+.clr-grey {
+  color: grey;
+}
+```
 
-## Deploying your project
+---
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+So at first it was hard to name things, I didn't know to write html first or css, but then I created some predefined classes like color(.clr), or background-color (.clr-...-bg) font sizes paddings etc. Slowly started to add classes into html and then if I made a mistake both finding the bug and fixing that become a lot easier.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+---
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+if I have used `\` in order to get classnames with dots like `p-.5` this className works in html, but in css you should use `p-\.5` otherwise css try to find a class after the dot. Let's see an example
 
-## Create a custom `README.md`
+```html
+<p class="p-.5">Text</p>
+```
+```css
+.p-\.5 {
+  padding: .5rem;
+}
+```
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+---
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+In order to use responsive mode like in big screen use to column in `grid` I use media queries. I use `p-md-5` in medium screen size or in large screen size `p-lg-5` etc.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+In Below example in small screen size padding first will be 2rem, but after width become bigger than 768px `.p-md-5` will take affect and padding will be 5rem;
 
-## Submitting your solution
+`html`
+```html
+<p class="p-2 p-md-5">Text</p>
+```
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+`css`
+```css
+.p-2 {
+  padding: 2rem;
+}
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+@media screen and (min-width: 768px) {
+  .p-md-5 {
+    padding: 5rem;
+  }
+}
+```
 
-## Sharing your solution
+---
 
-There are multiple places you can share your solution:
+Also whenever you use `px-5` or `py-5` make sure you use `padding-top` and `padding-bottom` properties seperately instead of using `padding: 5rem 0`. Let me explain why
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+`html`
+```html
+<p class="px-5 py-2">Text</p>
+```
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+here first it will apply add padding to the right and left and removes padding from top and bottom, but when you want add padding top and bottom as well(`2rem`) it also removes previously defined padding on the sides so this doesn't work with multiple paddings like this.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+`css`
+```css
+.px-5 {
+  padding: 0 5rem;
+}
 
-## Got feedback for us?
+.py-2 {
+  padding: 2rem 0;
+}
+```
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+In order to work this you should individually add to the paddings to the top, bottom, right and left without removing the any padding.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+`css`
+```css
+.px-5 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 
-**Have fun building!** 🚀
+.py-2 {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+```
+
+This way we don't override the previous paddings it works.
+
+---
+
+#### Javascript
+
+And in the javascript in order to select element I used `data-*` attribute in the html. Instead of selecting elements using just css classnames I used data attribute for selecting elements. Because those classNames doesn't represents actual content in css they always can change. Besides, atomic css is meant to used write quality css classes, that they can used over the project not just single use. So selecting elements by css classnames out of option otherwise there will be potentially misselecting elements in js.
+
+```html
+<div data-stats class="flex flex-col gap-1"></div>
+```
+
+```js
+const stats = document.querySelector("[data-stats]");
+```
+
+I also knew they didn't defined classesNames in data.json. So I created seperate array of json and then combine them.
+
+```js
+import data from "../data.json" assert { type: 'json' };
+const stats = document.querySelector("[data-stats]");
+
+const statsClasses = [
+    {
+        statName: "Reaction",
+        classes: ["clr-light-red", "clr-light-red-transparent-bg"]        
+    },
+    {
+        statName: "Memory",
+        classes: ["clr-orangey-yellow", "clr-orangey-yellow-transparent-bg"]
+    },
+    {
+        statName: "Verbal",
+        classes: ["clr-green-teal", "clr-green-teal-transparent-bg"]
+    },
+    {
+        statName: "Visual",
+        classes: ["clr-cobalt-blue", "clr-cobalt-blue-transparent-bg"]
+    }
+]
+
+// if category_name equal statname then and that classes to that json file
+data.map(({ category }, index) => {
+    statsClasses.forEach(({ statName, classes }) => {
+        if (category === statName) {
+            data[index]["classes"] = classes;
+        }
+    })
+})
+```
+
+Based on this I add class names exactly where I wanted to be. Probably there is better way of combining these. Anyway I will refactor it later :).
+
+---
+
+Then I added data to the dom
+```js
+let code = "";
+data.forEach(({category, score, icon, classes}) => code += `
+    <div class="p-1 rounded-.5 flex justify-between ${classes[1]}">
+        <div class="flex gap-.5">
+            <img src="${icon}" alt="${category}">
+            <h2 class="${classes[0]}">${category}</h2>
+        </div>
+        <p class="font-bold">${score} <span class="clr-dark-gray-blue opacity-70">/ 100</span></p>
+    </div>
+`)
+stats.innerHTML = code;
+```
+
+--- 
+
+I really like using atomic css it was really fun way to write css and at the end understanding my css is now a lot simpler also.
+
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- Atomic Css
+
+### Useful resources
+
+- [Tailwind Css](https://tailwindcss.com/) - This helped me for finding good class names and overall how to make a good css architecture
+
+
+## Author
+
+- Frontend Mentor - [Jabrayilzade Ali](https://www.frontendmentor.io/profile/jabrayilzadeali)
+- Twitter - [Jabrayilzade Ali](https://twitter.com/JabrayilzadeAli)
+
+## Acknowledgments
+
+Thank you frontendmentor for providing this callenge!
+
