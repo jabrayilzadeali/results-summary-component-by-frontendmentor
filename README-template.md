@@ -87,6 +87,8 @@ This time I wanted to experiment with atomic css. If you don't know atomic css i
 }
 ```
 
+So at first it was hard but some time later I used to it.
+
 ### Built with
 
 - Semantic HTML5 markup
